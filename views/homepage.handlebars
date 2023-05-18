@@ -1,0 +1,31 @@
+<nav class="navbars row">
+    <div href="/homepage"class="col-md-1 btn" style="font-size: 25px; font-weight:bolder;">
+ Home
+    </div>
+     <div href="/dashboard"class="col-md-2 btn" style="font-size: 25px; font-weight:bolder;">
+ Dashboard
+    </div>
+     <div href="/login" class="col-md-2 btn" style="font-size: 25px; font-weight:bolder;">
+ Logout
+    </div>
+    </nav>
+     <section class="py-5">
+             {{#each posts as |post|}}
+                    <div class="container px-4 px-lg-5 mt-5">
+                <div class="row justify-content-center post">
+                    <div class="col-md-8 titles">
+                        <h5 class="fw-bolder">{{post.title}}</h5>
+                    </div>
+                        <div class="col-md-8 description">
+                            <h5>{{post.description}}</h5>
+                        </div> 
+                            
+                            <div class="p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/post/{{id}}">Add comment</a></div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                     {{/each}}
+             
+                </section>
