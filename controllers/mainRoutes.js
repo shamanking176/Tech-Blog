@@ -35,15 +35,21 @@ router.get('/post/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+          attribute: ['body']
+       },
       ],
     });
-
+    const commentData = await Post.findAll();
+    const comment = commentData.map((comment) => comment.get({plain:true}));
     const post = postData.get({ plain: true });
-
-    res.render('dashboard', {
-      ...comment,
+     res.render('onepost', {
+      post,
+      comment,
       logged_in: req.session.logged_in
     });
+   
   } catch (err) {
     res.status(500).json(err);
   }
