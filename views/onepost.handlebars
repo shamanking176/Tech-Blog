@@ -1,26 +1,17 @@
-  <nav class="navbars row">
-    <a href="/homepage"class="col-md-1 btn" style="font-size: 25px; font-weight:bolder;">
- Home
-    </a>
-     <a href="/dashboard"class="col-md-2 btn" style="font-size: 25px; font-weight:bolder;">
- Dashboard
-    </a>
-     <a href="/login" class="col-md-2 btn" style="font-size: 25px; font-weight:bolder;">
- Logout
-    </a>
-    </nav>
-  <div class="container px-4 px-lg-5 mt-5">
-                <div class="row justify-content-center post">
-                    <div class="col-md-8 titles">
-                        <h5 class="fw-bolder">{{post.title}}</h5>
-                        <h5>Posted by {{user.name}} on </h5>
-                    </div>
-                        <div class="col-md-8 description">
-                            <h5>{{post.description}}</h5>
-                        </div> 
-                         <div class="col-md-8 description">  
-                            <input class="newcomment" type="text" id="comment" size="100">
-                        </div>
-                       
-                    </div>
-                    <script src="/js/comment.js"></script>
+<div class="container px-4 px-lg-5 mt-5">
+  <div class="row justify-content-center post">
+    <div id="postid">{{post.id}}</div>
+    <div class="col-md-8 titles">
+      <h5 class="fw-bolder">{{post.title}}</h5>
+      <h5>Posted by {{post.user.name}} on </h5>
+    </div>
+    <div class="col-md-8 description">
+      <h5>{{post.description}}</h5>
+    </div>
+    <div class="col-md-8 description">
+      <input class="newcomment" type="text" id="comment" size="100" />
+    </div>
+
+  </div>
+</div>
+<script src="/js/comment.js"></script>

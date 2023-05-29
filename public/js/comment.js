@@ -1,4 +1,4 @@
-
+const postIdEl = document.querySelector('#postid')
 const addCommentEl = document.querySelector('#comment');
 // const NameEl = document.querySelector('');
 console.log('hello i am in my js file');
@@ -11,7 +11,7 @@ const addComment = async (event) =>
     event.preventDefault();
     //const name = NameEl.value.trim();
     const comment = addCommentEl.value.trim();
-    
+    const postId = postIdEl.value.trim();
     console.log("****************GENERATING DATA 1****************")
     
     console.log(comment)
