@@ -1,27 +1,29 @@
 const postIdEl = document.querySelector('#postid')
-const addCommentEl = document.querySelector('#comment');
-const addCommentbtnEl = document.querySelector('#comment-btn');
+const addPostEl = document.querySelector('#post');
+const addPostbtnEl = document.querySelector('#post-btn');
+const titleEl = document.querySelector('#postTitle');
 // const NameEl = document.querySelector('');
 console.log('hello i am in my js file');
 
 
 
 
-const addComment = async (event) => 
+const addPost = async (event) => 
 {
     event.preventDefault();
     //const name = NameEl.value.trim();
-    const comment = addCommentEl.value.trim();
+    const post = addPostEl.value.trim();
     const postId = postIdEl.textContent.trim();
+    const title = titleEl.textContent.trim();
     console.log("****************GENERATING DATA 1****************")
     
-    console.log(comment)
-    if ( comment && postId) {
+    console.log(post)
+    if ( post && postId && title) {
       // console.log('Submitting info')
       const response = await fetch('/api/comments/post', {
        // const response = await fetch('/api/users', {
           method:'POST',
-          body: JSON.stringify({body:comment, postId}),
+          body: JSON.stringify({title:title , description:post, postId}),
           headers: { 'Content-Type': 'application/json' },
         });
         console.log('RESPONSE:',response)
@@ -29,10 +31,10 @@ const addComment = async (event) =>
           console.log("****************RESPONSE IS OK 1****************")
           document.location.reload();
         } else {
-          alert(response.statusText," Failed to add comment");
+          alert(response.statusText," Failed to add post");
         }
       }
     
 }
 
-addCommentbtnEl.addEventListener("click", addComment);
+addPostbtnEl.addEventListener("click", addPost);

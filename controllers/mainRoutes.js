@@ -41,12 +41,13 @@ router.get('/post/:id', async (req, res) => {
        },
       ],
     });
-    const commentData = await Post.findAll();
-    const comment = commentData.map((comment) => comment.get({plain:true}));
+    // const commentData = await Post.findAll();
+    // const comment = commentData.map((comment) => comment.get({plain:true}));
     const post = postData.get({ plain: true });
+    console.log(post);
      res.render('onepost', {
       post,
-      comment,
+      // comment,
       logged_in: req.session.logged_in
     });
    
@@ -135,5 +136,32 @@ router.get('/homepage', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/newpost', async (req, res) => {
+  try {
+    
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    
+    res.render('newpost', { 
+      posts, 
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 
 module.exports = router;
