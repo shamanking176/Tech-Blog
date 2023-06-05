@@ -5,26 +5,25 @@
       <div class="row justify-content-center post">
         <div class="col-md-8 titles">
           <h5 class="fw-bolder">{{post.title}}</h5>
-          <h5>Posted by {{user.name}} on </h5>
+          <h5>Posted by {{user.name}} on {{format_date updatedAt}}</h5>
         </div>
         <div class="col-md-8 description">
           <h5>{{post.description}}</h5>
         </div>
-        {{#if logged_in}}
+        {{!-- {{#if logged_in}} --}}
           <div class="p-4 pt-0 border-top-0 bg-transparent">
             <div class="text-center"><a
                 class="btn btn-outline-dark mt-auto"
                 href="/post/{{id}}"
               >Add comment</a></div>
           </div>
-          <div class="text-center"><a
-                class="btn btn-outline-dark mt-auto"
-                href="/newpost"></a>
-          New Post
-          </div>
-        {{/if}}
+          
+        {{!-- {{/if}} --}}
       </div>
     </div>
   {{/each}}
-
+  <div class="text-center"><a
+                class="btn btn-outline-dark mt-auto"
+                href="/newpost">New Post</a>
+          </div>
 </section>
