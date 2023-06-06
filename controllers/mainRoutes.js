@@ -162,6 +162,10 @@ router.get('/newpost', async (req, res) => {
   }
 });
 
+router.get('/editpost', async (req, res) =>{
+ const postData = await fetch(`/api/post/${postId}`, {
 
+ })
+});
 
 module.exports = router;

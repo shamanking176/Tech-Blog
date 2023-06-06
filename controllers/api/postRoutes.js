@@ -42,9 +42,9 @@ router.post('/', async (req, res) => {
     }
   });
   
+  router.update('/:id', async (req, res) => {
   
-  
-  
+  });
   
   
     module.exports = router;
