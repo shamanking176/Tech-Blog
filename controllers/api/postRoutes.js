@@ -42,11 +42,11 @@ router.post('/', async (req, res) => {
     }
   });
   
-  router.update('/:id', async (req, res) => {
-  Post.update(req.body,{
-    
-  })
-  });
+  // router.update('/:id', async (req, res) => {
+  // Post.update(req.body,{
+
+  // })
+  // });
   
   
     module.exports = router;

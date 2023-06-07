@@ -163,9 +163,29 @@ router.get('/newpost', async (req, res) => {
 });
 
 router.get('/editpost', async (req, res) =>{
+  try{
  const postData = await fetch(`/api/post/${postId}`, {
-
+  include: [
+    {
+      model: User,
+      attributes: ['name'],
+    },
+    {
+      model: Comment,
+      attributes: ['body'],
+   },
+  ],
  })
+ const posts = postData.get({ plain: true });
+
+ res.render('editpost', { 
+  posts, 
+  logged_in: true
+});
+} catch (err) {
+res.status(500).json(err);
+}
+
 });
 
 module.exports = router;
