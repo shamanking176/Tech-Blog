@@ -162,20 +162,21 @@ router.get('/newpost', async (req, res) => {
   }
 });
 
-router.get('/editpost', async (req, res) =>{
+router.get('/editpost/:id', async (req, res) =>{
   try{
- const postData = await fetch(`/api/post/${postId}`, {
-  include: [
-    {
-      model: User,
-      attributes: ['name'],
-    },
-    {
-      model: Comment,
-      attributes: ['body'],
-   },
-  ],
- })
+//  const postData = await fetch(`/api/post/${postId}`, {
+//   include: [
+//     {
+//       model: User,
+//       attributes: ['name'],
+//     },
+//     {
+//       model: Comment,
+//       attributes: ['body'],
+//    },
+//   ],
+//  })
+const postData = await Post.findByPk(req.params.id);
  const posts = postData.get({ plain: true });
 
  res.render('editpost', { 
