@@ -1,19 +1,19 @@
 <div class="container px-4 px-lg-5 mt-5">
       <div class="row justify-content-center post">
-        <div class="col-md-8 titles">
+        <div class="col-md-8 titles ">
            <input type="hidden" name="post-id" value="{{post.id}}" />
-          <input class="fw-bolder newpost"type="text" id="postTitle" size="100">{{post.title}}</input>
+          <input class="fw-bolder newpost"type="text" id="postTitle" size="100" value="{{post.title}}"></input>
           <div class="row"></div>
           <h5>Posted by {{post.user.name}} on </h5>
           <h5 id="date"></h5>
         </div>
-        <div class="col-md-8" >
-          <input class=""type="text" id="post" size="100">{{post.description}}</input>
+        <div class="col-md-8 field" >
+          <input class="field__input"type="text" id="post" value="{{post.description}}" size="100"></input>
         </div>
       </div>
 <div class="col-md-8 description">
       <button id="edit-btn">Edit</button>
     </div>
     </div>
-    <script src="./js/date.js"></script>
+    {{!-- <script src="./js/date.js"></script> --}}
     <script src="./js/post.js"></script>

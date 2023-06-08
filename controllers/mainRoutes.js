@@ -177,13 +177,14 @@ router.get('/editpost/:id', async (req, res) =>{
 //   ],
 //  })
 const postData = await Post.findByPk(req.params.id);
- const posts = postData.get({ plain: true });
-
+ const post = postData.get({ plain: true });
+console.log(post);
  res.render('editpost', { 
-  posts, 
+  post, 
   logged_in: true
 });
 } catch (err) {
+  console.log(err);
 res.status(500).json(err);
 }
 

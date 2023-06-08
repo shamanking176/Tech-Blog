@@ -7,11 +7,12 @@
     </div>
     <div class="col-md-8 description">
       <h5>{{post.description}}</h5>
-    </div>
+    
     {{#each post.Comments}}
 
     <h6>{{body}}</h6>
     {{/each}}
+    </div>
     <div class="col-md-8 description">
       <input class="newcomment" type="text" id="comment" size="100" />
       <button id="comment-btn">Create</button>

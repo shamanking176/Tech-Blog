@@ -60,7 +60,7 @@ const editPost = async (event) =>
           console.log("****************RESPONSE IS OK 1****************")
           document.location.reload('/homepage');
         } else {
-          alert(response.statusText," Failed to add post");
+          alert(response.statusText," Failed to edit post");
         }
       }
     
