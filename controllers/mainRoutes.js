@@ -41,13 +41,11 @@ router.get('/post/:id', async (req, res) => {
        },
       ],
     });
-    // const commentData = await Post.findAll();
-    // const comment = commentData.map((comment) => comment.get({plain:true}));
+    
     const post = postData.get({ plain: true });
     console.log(post);
      res.render('onepost', {
       post,
-      // comment,
       logged_in: req.session.logged_in
     });
    
@@ -56,25 +54,7 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
-// router.get('/profile', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Project }],
-//     });
 
-//     const user = userData.get({ plain: true });
-
-//     res.render('profile', {
-//       ...user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -164,18 +144,7 @@ router.get('/newpost', async (req, res) => {
 
 router.get('/editpost/:id', async (req, res) =>{
   try{
-//  const postData = await fetch(`/api/post/${postId}`, {
-//   include: [
-//     {
-//       model: User,
-//       attributes: ['name'],
-//     },
-//     {
-//       model: Comment,
-//       attributes: ['body'],
-//    },
-//   ],
-//  })
+
 const postData = await Post.findByPk(req.params.id);
  const post = postData.get({ plain: true });
 console.log(post);
