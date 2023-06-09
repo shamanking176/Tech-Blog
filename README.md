@@ -2,14 +2,10 @@
 
 ## Description
 
-This website was created to show the main resources that Horsieon supply and what the focus of the company is. This includes, Search Engnie Optimization, Online Reputation Management, and Social Media Marketing.
-## Motivation
-
-Horsieon requested for the code to be reworked so that it was easilt accessable and comprehensive. Changes were made to semantics. formating, and comments.
-
+This app was created to allow users to share their ideas and knowledge in a community based setting.
 ## Features
 
-The buttons on the top right will direct you to the corresponding content on the page of the website.
+The buttons on the top will direct you to the corresponding content on the page of the website.
 
 ## User Story
 
@@ -52,4 +48,12 @@ WHEN I click on the logout option in the navigation
 THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
+
 ## Application
+https://tech-blog-al.herokuapp.com/
+
+![Capture](https://github.com/shamanking176/Tech-Blog/assets/107295752/711dedcd-2017-4768-9397-73cd19aef7e6)
+
+
+
+
