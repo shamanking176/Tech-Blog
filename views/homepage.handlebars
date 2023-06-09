@@ -9,9 +9,12 @@
         </div>
         <div class="col-md-8 description">
           <h5>{{post.description}}</h5>
-          <h5>{{post.Comments.body}}</h5>
+          {{#each post.Comments}}
+
+    <h6>{{body}}</h6>
+    {{/each}}
         </div>
-        {{!-- {{#if logged_in}} --}}
+        {{#if logged_in}}
           <div class="p-4 pt-0 border-top-0 bg-transparent">
             <div class="text-center"><a
                 class="btn btn-outline-dark mt-auto"
@@ -23,12 +26,14 @@
           </div>
           </div>
           
-        {{!-- {{/if}} --}}
+        {{/if}}
       </div>
     </div>
   {{/each}}
+  {{#if logged_in}}
   <div class="text-center"><a
                 class="btn btn-outline-dark mt-auto"
                 href="/newpost">New Post</a>
           </div>
+          {{/if}}
 </section>
